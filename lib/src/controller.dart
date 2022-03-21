@@ -4,12 +4,12 @@
 ///
 ///
 ///
-export 'package:inherited_state_mixin_example/src/controller/Inherited/controller.dart';
+export 'package:inherited_state_mixin_example/src/controller/Inherited/_inherited.dart';
 
-export 'package:inherited_state_mixin_example/src/controller/app/controller.dart';
+export 'package:inherited_state_mixin_example/src/controller/app/_app.dart';
 
-export 'package:inherited_state_mixin_example/src/controller/home/home_controller.dart';
+export 'package:inherited_state_mixin_example/src/controller/home/_home.dart';
 
-export 'package:inherited_state_mixin_example/src/controller/images/controller.dart';
+export 'package:inherited_state_mixin_example/src/controller/images/_images.dart';
 
-export 'package:inherited_state_mixin_example/src/controller/mixin/controller.dart';
+export 'package:inherited_state_mixin_example/src/controller/mixin/_mixin.dart';

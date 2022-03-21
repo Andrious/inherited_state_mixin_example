@@ -7,8 +7,8 @@
 
 export 'package:flutter/material.dart';
 
-export 'package:inherited_state_mixin_example/src/view/home/view.dart';
+export 'package:inherited_state_mixin_example/src/view/home/_view_home.dart';
 
-export 'package:inherited_state_mixin_example/src/view/images/view.dart';
+export 'package:inherited_state_mixin_example/src/view/images/_view_images.dart';
 
-export 'package:inherited_state_mixin_example/src/view/inherited/view.dart';
+export 'package:inherited_state_mixin_example/src/view/inherited/_view_inherited.dart';

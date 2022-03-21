@@ -44,5 +44,5 @@ class _BirdInherited extends InheritedWidget {
   const _BirdInherited({Key? key, required Widget child})
       : super(key: key, child: child);
   @override
-  bool updateShouldNotify(oldWidget) => true;
+  bool updateShouldNotify(covariant InheritedWidget oldWidget) => true;
 }

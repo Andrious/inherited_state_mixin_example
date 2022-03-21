@@ -40,5 +40,5 @@ class _DogInherited extends InheritedWidget {
   const _DogInherited({Key? key, required Widget child})
       : super(key: key, child: child);
   @override
-  bool updateShouldNotify(oldWidget) => true;
+  bool updateShouldNotify(covariant InheritedWidget oldWidget) => true;
 }

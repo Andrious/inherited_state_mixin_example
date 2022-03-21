@@ -4,3 +4,5 @@
 ///
 ///
 ///
+
+export 'package:inherited_state_mixin_example/src/controller/home/home_controller.dart';

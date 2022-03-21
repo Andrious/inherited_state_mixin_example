@@ -2,6 +2,7 @@
 // Use of this source code is governed by a Apache license that can be
 // found in the LICENSE file.
 ///
+///  Any State object 'with' this mixin has then a built-in InheritedWidget
 ///
 ///
 import 'package:flutter/material.dart';
@@ -162,7 +163,7 @@ class _BuildBuilder extends StatelessWidget {
       final errorDetails = FlutterErrorDetails(
         exception: e,
         stack: e is Error ? e.stackTrace : null,
-        library: 'mvc_pattern.dart',
+        library: 'inherited_state_mixin.dart',
         context:
             ErrorDescription("While building 'child' for InheritedWidget."),
       );
