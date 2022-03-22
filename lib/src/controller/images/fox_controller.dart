@@ -10,7 +10,7 @@ import 'package:inherited_state_mixin_example/src/controller.dart';
 import 'package:inherited_state_mixin_example/src/view.dart';
 
 ///
-class FoxController extends ImageAPIController implements InheritController {
+class FoxController extends InheritController {
   ///
   factory FoxController([State? state]) => _this ??= FoxController._(state);
   FoxController._([State? state]) : super(state);

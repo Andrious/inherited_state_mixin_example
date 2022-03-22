@@ -16,7 +16,7 @@ import 'package:inherited_state_mixin_example/src/controller.dart';
 import 'package:inherited_state_mixin_example/src/view.dart';
 
 /// This is the 'image API' State Object Controller.
-class ImageAPIController extends InheritController {
+class ImageAPIController extends Controller {
   /// Not a factory constructor and so multiple instances of this class is possible.
   ImageAPIController([State? state]) : super(state);
 
@@ -27,7 +27,7 @@ class ImageAPIController extends InheritController {
   Image? image;
 
   ///
-  void setInherited() => state?.setState(() {});
+  void onTap() => state?.setState(() {});
 
   /// The number of images loading using this class.
   static int imageCount = 0;

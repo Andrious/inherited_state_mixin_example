@@ -10,7 +10,7 @@ import 'package:inherited_state_mixin_example/src/controller.dart';
 import 'package:inherited_state_mixin_example/src/view.dart';
 
 ///
-class DogController extends ImageAPIController {
+class DogController extends InheritController {
   ///
   factory DogController([State? state]) => _this ??= DogController._(state);
   DogController._([State? state]) : super(state);

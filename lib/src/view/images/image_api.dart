@@ -25,10 +25,10 @@ class ImageAPIStateMVC<T extends StatefulWidget> extends State<T>
   }
 
   /// Take in a Controller.
-  void add(ImageAPIController? controller) => this.controller ??= controller;
+  void add(InheritController? controller) => this.controller ??= controller;
 
   ///
-  ImageAPIController? controller;
+  InheritController? controller;
 
   ///
   @override
@@ -48,8 +48,8 @@ class ImageAPIStateMVC<T extends StatefulWidget> extends State<T>
   Widget buildWidget(BuildContext context) {
     controller?.widgetInherited(context);
     return GestureDetector(
-      onTap: controller?.setInherited,
-      onDoubleTap: controller?.setInherited,
+      onTap: controller?.newAnimals,
+      onDoubleTap: controller?.newAnimals,
       child: Card(
         child: _con.image ?? const SizedBox(),
       ),

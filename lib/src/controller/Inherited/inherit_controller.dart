@@ -27,7 +27,5 @@ class InheritController extends Controller {
   }
 
   /// Rebuild the InheritedWidget to also rebuild its dependencies.
-  void newAnimals() {
-    state?.setState(() {});
-  }
+  void newAnimals() => setState(() {});
 }

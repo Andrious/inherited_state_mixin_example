@@ -20,4 +20,7 @@ class Controller {
 
   /// Used to complete asynchronous operations
   Future<bool> initAsync() async => true;
+
+  /// Call the associated State object to rebuild
+  void setState(VoidCallback fn) => state?.setState(fn);
 }

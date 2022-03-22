@@ -10,7 +10,7 @@ import 'package:inherited_state_mixin_example/src/controller.dart';
 import 'package:inherited_state_mixin_example/src/view.dart';
 
 ///
-class CatController extends ImageAPIController implements InheritController {
+class CatController extends InheritController {
   ///
   factory CatController([State? state]) => _this ??= CatController._(state);
   CatController._([State? state]) : super(state);
