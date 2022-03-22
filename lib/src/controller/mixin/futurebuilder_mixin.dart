@@ -25,7 +25,7 @@ mixin FutureBuilderStateMixin {
 
   /// Implement this function instead of the build() function
   /// to utilize a built-in FutureBuilder Widget.
-  Widget buildWidget(BuildContext context) => const SizedBox();
+  Widget buildWidget(BuildContext context);
 
   /// Run the CircularProgressIndicator() until asynchronous operations are
   /// completed before the app proceeds.
@@ -59,7 +59,7 @@ mixin FutureBuilderStateMixin {
           context: ErrorDescription('While getting ready in FutureBuilder'),
         );
 
-        // Possibly recover resources and close serivces before continuing to exit in error.
+        // Possibly recover resources and close services before continuing to exit in error.
         onAsyncError(errorDetails);
         //
       } else {
