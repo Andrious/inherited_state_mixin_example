@@ -47,7 +47,7 @@ mixin FutureBuilderStateMixin<T extends StatefulWidget> on State<T> {
         errorDetails = FlutterErrorDetails(
           exception: exception,
           stack: exception is Error ? exception.stackTrace : null,
-          library: 'mvc_pattern.dart',
+          library: 'futurebuild_mixin.dart',
           context: ErrorDescription('While getting ready in FutureBuilder'),
         );
 
@@ -58,7 +58,7 @@ mixin FutureBuilderStateMixin<T extends StatefulWidget> on State<T> {
         //
         errorDetails = FlutterErrorDetails(
           exception: Exception('App failed to initialize'),
-          library: 'mvc_pattern.dart',
+          library: 'futurebuild_mixin.dart',
           context: ErrorDescription('Please, notify Admin.'),
         );
       }
