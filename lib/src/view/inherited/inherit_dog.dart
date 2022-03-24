@@ -26,7 +26,6 @@ class _InheritDogState extends State<InheritDog> with InheritedStateMixin {
   _InheritDogState() {
     DogController(this);
     initInheritedState(
-      state: this,
       inheritedWidgetBuilder: (child) => _DogInherited(child: child),
     );
   }

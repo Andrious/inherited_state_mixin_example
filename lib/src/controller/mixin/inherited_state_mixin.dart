@@ -8,24 +8,19 @@
 import 'package:flutter/material.dart';
 
 ///
-mixin InheritedStateMixin {
+mixin InheritedStateMixin<T extends StatefulWidget> on State<T> {
   /// Traditionally called in the initState() function
-  void initInheritedState<T extends InheritedWidget>({
-    required State state,
-    required T Function(Widget child) inheritedWidgetBuilder,
+  void initInheritedState<U extends InheritedWidget>({
+    required U Function(Widget child) inheritedWidgetBuilder,
   }) {
-    // This is the State object with the mixin
-    _withState = state;
     // Create the StatefulWidget to contain the InheritedWidget
-    _inheritedStatefulWidget = InheritedStatefulWidget<T>(
+    _inheritedStatefulWidget = InheritedStatefulWidget<U>(
         inheritedWidgetBuilder: inheritedWidgetBuilder,
         child: _BuildBuilder(builder: buildChild));
   }
 
   /// Build the 'child' Widget passed to the InheritedWidget.
   Widget buildChild(BuildContext context);
-
-  State? _withState;
 
   /// Provide access to the 'InheritedWidget' StatefulWidget
   InheritedStatefulWidget get inheritedStatefulWidget =>
@@ -48,6 +43,7 @@ mixin InheritedStateMixin {
 
   /// Don't rebuild this State object but the State object containing the InheritedWidget.
   /// Rebuild all the dependencies of the _InheritedWidget widget.
+  @override
   void setState(VoidCallback fn) {
     _buildInherited = true;
     _inheritedStatefulWidget.setState(fn);
@@ -55,7 +51,7 @@ mixin InheritedStateMixin {
   }
 
   /// Provide a means to rebuild this State object anyway.
-  void setStateSuper(VoidCallback fn) => _withState?.setState(fn);
+  void setStateSuper(VoidCallback fn) => super.setState(fn);
 
   /// Implement this function instead of the build() function
   /// to utilize a built-in FutureBuilder Widget and InheritedWidget.
@@ -63,6 +59,7 @@ mixin InheritedStateMixin {
   /// Introduce an Inherited widget and simply passing through a 'child' widget.
   /// When the Inherited Widget is rebuilt only this build() function is called.
   /// i.e. The rest of the widget tree, widget.child, is left alone.
+  @override
   Widget build(BuildContext context) => _inheritedStatefulWidget;
 }
 

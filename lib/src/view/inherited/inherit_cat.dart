@@ -28,7 +28,6 @@ class _InheritCatState extends State<InheritCat> with InheritedStateMixin {
     super.initState();
     CatController(this);
     initInheritedState(
-      state: this,
       inheritedWidgetBuilder: (child) => _CatInherited(child: child),
     );
   }

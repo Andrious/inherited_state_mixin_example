@@ -29,7 +29,6 @@ class _InheritBirdState extends State<InheritBird> with InheritedStateMixin {
   _InheritBirdState() {
     BirdController(this);
     initInheritedState<_BirdInherited>(
-      state: this,
       inheritedWidgetBuilder: (child) => _BirdInherited(child: child),
     );
   }

@@ -13,22 +13,14 @@ import 'package:flutter/material.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 ///
-mixin FutureBuilderStateMixin {
-  /// Traditionally called in the initState() function
-  void initFutureBuilderState(State state) {
-    // This is the State object with the mixin
-    _withState ??= state;
-  }
-
-  /// The associated State object.
-  State? _withState;
-
+mixin FutureBuilderStateMixin<T extends StatefulWidget> on State<T> {
   /// Implement this function instead of the build() function
   /// to utilize a built-in FutureBuilder Widget.
-  Widget buildWidget(BuildContext context);
+  Widget buildWidget(BuildContext context) => const SizedBox();
 
   /// Run the CircularProgressIndicator() until asynchronous operations are
   /// completed before the app proceeds.
+  @override
   Widget build(BuildContext context) => FutureBuilder<bool>(
       future: initAsync(), initialData: false, builder: futureBuilderBuilder);
 
@@ -44,7 +36,7 @@ mixin FutureBuilderStateMixin {
 
     if (snapshot.hasData && snapshot.data!) {
       // Pass in the StatefulElement
-      widget = buildWidget(_withState!.context);
+      widget = buildWidget(this.context);
       //
     } else if (snapshot.connectionState == ConnectionState.done) {
       //

@@ -28,7 +28,6 @@ class _InheritFoxState extends State<InheritFox> with InheritedStateMixin {
     super.initState();
     FoxController(this);
     initInheritedState(
-      state: this,
       inheritedWidgetBuilder: (child) => _FoxInherited(child: child),
     );
   }

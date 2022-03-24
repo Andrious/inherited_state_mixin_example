@@ -20,8 +20,6 @@ class ImageAPIStateMVC<T extends StatefulWidget> extends State<T>
   }) {
     //
     _con = ImageAPIController(this);
-    // Supply this State object to the mixin.
-    initFutureBuilderState(this);
   }
 
   /// Take in a Controller.
